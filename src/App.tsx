@@ -11,40 +11,46 @@ import "./App.css";
 
 const initialQuotesData: QuoteRow[] = [
   {
+    id: -1,
+    strike: 22200,
+    call: { bid: 372, ask: 388 },
+    put: { bid: 454, ask: 550 },
+  },
+  {
     id: 1,
-    strike: 22000,
-    call: { bid: 122, ask: 143 },
-    put: { bid: 40, ask: 58 },
+    strike: 22300,
+    call: { bid: 296, ask: 328 },
+    put: { bid: 444, ask: 575 },
   },
   {
     id: 2,
-    strike: 22100,
-    call: { bid: 96, ask: 137 },
-    put: { bid: 31, ask: 59 },
+    strike: 22400,
+    call: { bid: 254, ask: 292 },
+    put: { bid: 530, ask: 595 },
   },
   {
     id: 3,
-    strike: 22200,
-    call: { bid: 75, ask: 98 },
-    put: { bid: 28, ask: 78 },
+    strike: 22500,
+    call: { bid: 227, ask: 252 },
+    put: { bid: 595, ask: 640 },
   },
   {
     id: 4,
-    strike: 22300,
-    call: { bid: 40, ask: 52.5 },
-    put: { bid: 96, ask: 137 },
+    strike: 22600,
+    call: { bid: 205, ask: 219 },
+    put: { bid: 640, ask: 705 },
   },
   {
     id: 5,
-    strike: 22400,
-    call: { bid: 20.5, ask: 22.5 },
-    put: { bid: 235, ask: 255 },
+    strike: 22700,
+    call: { bid: 170, ask: 180 },
+    put: { bid: 740, ask: 845 },
   },
   {
     id: 6,
-    strike: 22500,
-    call: { bid: 9, ask: 11 },
-    put: { bid: 320, ask: 340 },
+    strike: 22800,
+    call: { bid: 132, ask: 155 },
+    put: { bid: 810, ask: 865 },
   },
 ];
 
@@ -81,12 +87,12 @@ interface StrategyInputs {
 function App() {
   const [quotes, setQuotes] = useState<QuoteRow[]>(initialQuotesData);
   const [strategyInputs, setStrategyInputs] = useState<StrategyInputs>({
-    straddle: "22200",
-    strangle: { k1: "22100", k2: "22300" },
-    bullCall: { low: "22200", high: "22400" },
-    bearPut: { high: "22200", low: "22000" },
-    ironCondor: { kp1: "22000", kp2: "22100", kc1: "22300", kc2: "22400" },
-    butterfly: { low: "22100", mid: "22200", high: "22300" },
+    straddle: "22500",
+    strangle: { k1: "22300", k2: "22700" },
+    bullCall: { low: "22500", high: "22700" },
+    bearPut: { high: "22500", low: "22300" },
+    ironCondor: { kp1: "22300", kp2: "22400", kc1: "22600", kc2: "22700" },
+    butterfly: { low: "22300", mid: "22500", high: "22700" },
   });
   const [results, setResults] = useState<Record<string, any>>({});
 
@@ -284,6 +290,7 @@ function App() {
                 <label>履約價 (K):</label>
                 <input
                   type="number"
+                  step={100}
                   value={strategyInputs.straddle}
                   onChange={(e) =>
                     handleInputChange("straddle", "", e.target.value)
@@ -306,6 +313,7 @@ function App() {
                 <label>Put 履約價 (K1):</label>
                 <input
                   type="number"
+                  step={100}
                   value={strategyInputs.strangle.k1}
                   onChange={(e) =>
                     handleInputChange("strangle", "k1", e.target.value)
@@ -314,6 +322,7 @@ function App() {
                 <label>Call 履約價 (K2):</label>
                 <input
                   type="number"
+                  step={100}
                   value={strategyInputs.strangle.k2}
                   onChange={(e) =>
                     handleInputChange("strangle", "k2", e.target.value)
@@ -336,6 +345,7 @@ function App() {
                 <label>買入履約價 (Low):</label>
                 <input
                   type="number"
+                  step={100}
                   value={strategyInputs.bullCall.low}
                   onChange={(e) =>
                     handleInputChange("bullCall", "low", e.target.value)
@@ -344,6 +354,7 @@ function App() {
                 <label>賣出履約價 (High):</label>
                 <input
                   type="number"
+                  step={100}
                   value={strategyInputs.bullCall.high}
                   onChange={(e) =>
                     handleInputChange("bullCall", "high", e.target.value)
@@ -366,6 +377,7 @@ function App() {
                 <label>買入履約價 (High):</label>
                 <input
                   type="number"
+                  step={100}
                   value={strategyInputs.bearPut.high}
                   onChange={(e) =>
                     handleInputChange("bearPut", "high", e.target.value)
@@ -374,6 +386,7 @@ function App() {
                 <label>賣出履約價 (Low):</label>
                 <input
                   type="number"
+                  step={100}
                   value={strategyInputs.bearPut.low}
                   onChange={(e) =>
                     handleInputChange("bearPut", "low", e.target.value)

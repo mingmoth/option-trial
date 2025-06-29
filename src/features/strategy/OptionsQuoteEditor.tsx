@@ -67,9 +67,9 @@ const OptionsQuoteEditor: React.FC<OptionsQuoteEditorProps> = ({ quotes, onQuote
       <table className="quote-table">
         <thead>
           <tr>
-            <th>履約價</th>
             <th>買權 買入</th>
             <th>買權 賣出</th>
+            <th>履約價</th>
             <th>賣權 買入</th>
             <th>賣權 賣出</th>
             <th>操作</th>
@@ -78,13 +78,6 @@ const OptionsQuoteEditor: React.FC<OptionsQuoteEditorProps> = ({ quotes, onQuote
         <tbody>
           {quotes.map((quote) => (
             <tr key={quote.id}>
-              <td>
-                <input
-                  type="number"
-                  value={quote.strike}
-                  onChange={(e) => handleInputChange(quote.id, 'strike', e.target.value)}
-                />
-              </td>
               <td>
                 <input
                   type="number"
@@ -97,6 +90,14 @@ const OptionsQuoteEditor: React.FC<OptionsQuoteEditorProps> = ({ quotes, onQuote
                   type="number"
                   value={quote.call.ask}
                   onChange={(e) => handleInputChange(quote.id, 'call.ask', e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  step={100}
+                  value={quote.strike}
+                  onChange={(e) => handleInputChange(quote.id, 'strike', e.target.value)}
                 />
               </td>
               <td>
