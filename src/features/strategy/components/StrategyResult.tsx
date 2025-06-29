@@ -23,7 +23,7 @@ export default function StrategyResult({ result }: StrategyResultProps) {
   const bePoints = breakevens ?? (breakeven !== undefined ? [breakeven] : []);
 
   return (
-    <div style={{ fontFamily: 'sans-serif', display: 'grid', gap: '12px', gridTemplateColumns: '1fr 1fr', }}>
+    <div style={{ fontFamily: 'sans-serif', display: 'grid', gap: '4px' }}>
       {/* <h2 style={{ marginBottom: '12px', fontSize: '18px', borderBottom: '1px solid #cbd5e1', paddingBottom: '8px' }}>策略結果</h2> */}
 
       {/* 成本／權利金 */}
