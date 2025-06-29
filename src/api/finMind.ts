@@ -1,10 +1,9 @@
 const FINDMINDTRADE_API = "/finMind";
-const TOKEN =
-  "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wNi0yOCAxNTozNjoyOSIsInVzZXJfaWQiOiJtaW5nbW90aCIsImlwIjoiMS4xNjguMzcuMjcifQ.fa4pCaA0FgFyGEWr09LyLxKzXXAcyzIg45Xp5DNuN9M";
+const TOKEN = import.meta.env.VITE_FINMIND_TOKEN;
 const DATA_SET = "TaiwanFutOptTickInfo";
 // const DATA_ID = 'TX220400G5'
 
-async function getOptionAPI() {
+export async function getOptionAPI() {
   try {
     const response = await fetch(`${FINDMINDTRADE_API}?dataset=${DATA_SET}`, {
       headers: {

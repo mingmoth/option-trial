@@ -165,7 +165,7 @@ function App() {
         newResults.butterfly = { error: error.message || String(error) };
       }
       setResults(newResults);
-    }, 400) // 400ms debounce
+    }, 500) // 500ms debounce
   ).current;
 
   // 每次 quotes 或 strategyInputs 變動時自動計算
