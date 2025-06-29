@@ -64,7 +64,6 @@ const OptionsQuoteEditor: React.FC<OptionsQuoteEditorProps> = ({ quotes, onQuote
 
   return (
     <div className="quote-editor-container">
-      <h2>期權報價編輯器</h2>
       <table className="quote-table">
         <thead>
           <tr>
