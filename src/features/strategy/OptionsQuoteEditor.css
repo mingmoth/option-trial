@@ -1,0 +1,77 @@
+/* src/components/OptionsQuoteEditor.css */
+
+.quote-editor-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  max-width: 800px;
+}
+
+.quote-editor-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.quote-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.quote-table th, .quote-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.quote-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.quote-table input[type="number"] {
+  width: 90%;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: right;
+  transition: border-color 0.2s;
+}
+
+.quote-table input[type="number"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.add-btn, .delete-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.add-btn {
+  background-color: #28a745;
+  color: white;
+  margin-top: 20px;
+  display: block;
+  width: 100%;
+}
+
+.add-btn:hover {
+  background-color: #218838;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+.add-btn:active, .delete-btn:active {
+    transform: scale(0.98);
+}
