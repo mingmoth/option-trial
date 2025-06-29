@@ -409,6 +409,7 @@ function App() {
                 <label>買 Put (Kp1):</label>
                 <input
                   type="number"
+                  step={100}
                   value={strategyInputs.ironCondor.kp1}
                   onChange={(e) =>
                     handleInputChange("ironCondor", "kp1", e.target.value)
@@ -417,6 +418,7 @@ function App() {
                 <label>賣 Put (Kp2):</label>
                 <input
                   type="number"
+                  step={100}
                   value={strategyInputs.ironCondor.kp2}
                   onChange={(e) =>
                     handleInputChange("ironCondor", "kp2", e.target.value)
@@ -425,6 +427,7 @@ function App() {
                 <label>賣 Call (Kc1):</label>
                 <input
                   type="number"
+                  step={100}
                   value={strategyInputs.ironCondor.kc1}
                   onChange={(e) =>
                     handleInputChange("ironCondor", "kc1", e.target.value)
@@ -433,6 +436,7 @@ function App() {
                 <label>買 Call (Kc2):</label>
                 <input
                   type="number"
+                  step={100}
                   value={strategyInputs.ironCondor.kc2}
                   onChange={(e) =>
                     handleInputChange("ironCondor", "kc2", e.target.value)
@@ -457,6 +461,7 @@ function App() {
                 <label>買進 低履約 (KL):</label>
                 <input
                   type="number"
+                  step={100}
                   value={strategyInputs.butterfly.low}
                   onChange={(e) =>
                     handleInputChange("butterfly", "low", e.target.value)
@@ -465,6 +470,7 @@ function App() {
                 <label>賣出 中樞*2 (KM):</label>
                 <input
                   type="number"
+                  step={100}
                   value={strategyInputs.butterfly.mid}
                   onChange={(e) =>
                     handleInputChange("butterfly", "mid", e.target.value)
@@ -473,6 +479,7 @@ function App() {
                 <label>買進高履約 (KH):</label>
                 <input
                   type="number"
+                  step={100}
                   value={strategyInputs.butterfly.high}
                   onChange={(e) =>
                     handleInputChange("butterfly", "high", e.target.value)
